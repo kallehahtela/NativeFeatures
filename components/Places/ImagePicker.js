@@ -6,10 +6,11 @@ import { launchCameraAsync, useCameraPermissions, PermissionStatus } from 'expo-
 import { Colors } from '../../constants/style';
 import OutlinedButton from "../UI/OutlinedButton";
 
-function ImagePicker({onTakeImage}) {
+function ImagePicker({ onTakeImage }) {
   const [pickedImage, setPickedImage] = useState();
 
-  const [cameraPermissionInformation, requestPermission] = useCameraPermissions();
+  const [cameraPermissionInformation, requestPermission] =
+    useCameraPermissions();
 
   async function verifyPermissions() {
     if (cameraPermissionInformation.status === PermissionStatus.UNDETERMINED) {
@@ -55,7 +56,9 @@ function ImagePicker({onTakeImage}) {
   return (
     <View>
       <View style={styles.imagePreview}>{imagePreview}</View>
-      <OutlinedButton icon='camera' onPress={takeImageHandler}>Take Image</OutlinedButton>
+      <OutlinedButton icon="camera" onPress={takeImageHandler}>
+        Take Image
+      </OutlinedButton>
     </View>
   );
 }
@@ -76,6 +79,5 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '100%',
-    borderRadius: 4,
   },
 });

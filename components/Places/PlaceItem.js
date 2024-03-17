@@ -4,7 +4,10 @@ import { Colors } from '../../constants/style';
 
 function PlaceItem({ place, onSelect }) {
   return (
-    <Pressable style={({pressed}) => [styles.item, pressed && styles.pressed]} onPress={onSelect.bind(this, place.id)}>
+    <Pressable
+      style={({ pressed }) => [styles.item, pressed && styles.pressed]}
+      onPress={onSelect.bind(this, place.id)}
+    >
       <Image style={styles.image} source={{ uri: place.imageUri }} />
       <View style={styles.info}>
         <Text style={styles.title}>{place.title}</Text>
@@ -25,12 +28,12 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primary500,
     elevation: 2,
     shadowColor: 'black',
-    shadowOpacity: .15,
+    shadowOpacity: 0.15,
     shadowOffset: { width: 1, height: 1 },
     shadowRadius: 2,
   },
   pressed: {
-    opacity: .9,
+    opacity: 0.9,
   },
   image: {
     flex: 1,

@@ -19,11 +19,13 @@ export default function App() {
   const [dbInitialized, setDbInitialized] = useState(false);
 
   useEffect(() => {
-    init().then(() => {
-      setDbInitialized(true);
-    }).catch((err) => {
-      console.log(err);
-    });
+    init()
+      .then(() => {
+        setDbInitialized(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   if (!dbInitialized) {
@@ -63,8 +65,14 @@ export default function App() {
               title: 'Add a new Place',
             }}
           />
-          <Stack.Screen name='Map' component={Map} />
-          <Stack.Screen name='PlaceDetail' component={PlaceDetail} />
+          <Stack.Screen name="Map" component={Map} />
+          <Stack.Screen
+            name="PlaceDetail"
+            component={PlaceDetail}
+            options={{
+              title: 'Loading Place...',
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>
