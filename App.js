@@ -11,6 +11,7 @@ import AddPlace from './screens/AddPlace';
 import IconButton from './components/UI/IconButton';
 import Map from './screens/Map';
 import { init } from './util/database';
+import PlaceDetail from './screens/PlaceDetail';
 
 const Stack = createNativeStackNavigator();
 
@@ -63,6 +64,7 @@ export default function App() {
             }}
           />
           <Stack.Screen name='Map' component={Map} />
+          <Stack.Screen name='PlaceDetail' component={PlaceDetail} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
